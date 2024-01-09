@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:14:19 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/08 17:13:34 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/09 17:06:21 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,45 @@ char	*print_message(char *message)
 	free(message);
 	return (NULL);
 }
+/*
+0xFF = 11111111
+0x80 = 10000000
 
+
+1. SIGUSR1
+
+c    = 11111111 
+bits = 0
+
+c ^= 0x80 >> bits
+
+0xFF     ^ 0x80     >> 0
+11111111 ^ 10000000 >> 0
+01111111 >> 0
+01111111
+
+2.
+
+c    = 01111111
+bits = 1
+
+c ^= 0x80 >> bits
+
+01111111 ^ 10000000 >> 1
+11111111 >> 1
+01111111
+
+3.
+
+c    = 01111111
+bits = 2
+
+01111111 ^ 10000000 >> 2
+11111111 >> 2
+00111111
+
+
+*/
 void	handler_sigusr(int signum, siginfo_t *info, void *context)
 {
 	static char	c = 0xFF;
@@ -49,14 +87,14 @@ void	handler_sigusr(int signum, siginfo_t *info, void *context)
 int	main(void)
 {
 	struct sigaction	sa_signal;
-//	sigset_t			block_mask;
+	sigset_t			block_mask;
 
-	/*sigemptyset(&block_mask);
+	sigemptyset(&block_mask);
 	sigaddset(&block_mask, SIGINT);
 	sigaddset(&block_mask, SIGQUIT);
 	sa_signal.sa_handler = 0;
 	sa_signal.sa_flags = SA_SIGINFO;
-	sa_signal.sa_mask = block_mask;*/
+	sa_signal.sa_mask = block_mask;
 	sa_signal.sa_sigaction = handler_sigusr;
 	sigaction(SIGUSR1, &sa_signal, NULL);
 	sigaction(SIGUSR2, &sa_signal, NULL);

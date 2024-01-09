@@ -6,7 +6,7 @@
 #    By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 15:52:13 by gabe              #+#    #+#              #
-#    Updated: 2024/01/08 17:12:08 by gabe             ###   ########.fr        #
+#    Updated: 2024/01/09 17:07:08 by gabe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ END			=	\033[0m
 	@${CC} ${CFLAGS} ${INCLUDE} -c $< -o ${<:.c=.o}
 	@echo "[$(GREEN)compiling$(END)]: $<"
 
-all: ${SERVER} 
+all: ${SERVER} ${CLIENT}
 
 ${NAME}: all
 
@@ -46,7 +46,7 @@ ${SERVER}: ${OBJ_SERVER}
 	@${CC} ${OBJ_SERVER} ${LIBFT} -o ${SERVER}
 	@echo "[$(GREEN)compiling$(END)]: $<"
 
-${CLIENT}: ${CLIENT}
+${CLIENT}: ${OBJ_CLIENT}
 	@${MAKE} ${LIBFT_PATH}
 	@${CC} ${OBJ_CLIENT} ${LIBFT} -o ${CLIENT}
 	@echo "[$(GREEN)compiling$(END)]: $<"

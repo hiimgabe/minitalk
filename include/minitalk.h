@@ -6,13 +6,14 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:50:03 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/08 17:10:03 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/09 17:07:31 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
+#include <stdio.h>
 #include <signal.h>
 #include "../libft/libft.h"
 
@@ -24,5 +25,6 @@
 
 char	*ft_strappend(char *message, char c);
 void	ft_error(int pid, char *message);
+int		send_null(int pid, char *str);
 
 #endif
