@@ -6,7 +6,7 @@
 #    By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 15:52:13 by gabe              #+#    #+#              #
-#    Updated: 2024/01/09 17:07:08 by gabe             ###   ########.fr        #
+#    Updated: 2024/01/11 09:20:13 by gabe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME	=
 SERVER	=	server
 CLIENT	=	client
 
-SRC_SERVER	=	server.c utils.c
-SRC_CLIENT	=	client.c utils.c
+SRC_SERVER	=	src/server.c src/utils.c
+SRC_CLIENT	=	src/client.c src/utils.c
 
 OBJ_SERVER	=	${SRC_SERVER:.c=.o}
 OBJ_CLIENT	=	${SRC_CLIENT:.c=.o}

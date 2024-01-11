@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:56:53 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/09 17:04:07 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/11 09:14:40 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ char	*ft_strappend(char *message, char c)
 		new = malloc(2);
 		new[0] = c;
 		new[1] = '\0';
+		return (new);
 	}
-	new = malloc(ft_strlen(message) + 2);
+	else
+		new = malloc(ft_strlen(message) + 2);
 	while (message[i])
 	{
 		new[i] = message[i];

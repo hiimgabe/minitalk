@@ -6,7 +6,7 @@
 /*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:46:55 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/09 17:06:17 by gabe             ###   ########.fr       */
+/*   Updated: 2024/01/11 10:01:00 by gabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ int	send_bit(int pid, char *str)
 				ft_error(pid, message);
 		}
 		else if (kill(s_pid, SIGUSR1) == -1)
+		{
 			ft_error(pid, message);
+		}
+		ft_printf("%c & (0x80 >> (%d %% 8)) = %d\n", message[bits / 8], bits, message[bits / 8] & (0x80 >> (bits % 8)));
 		return (0);
 	}
 	if (!send_null(s_pid, message))
 		return (0);
+	ft_printf("bits = %d\n", bits);
 	free(message);
 	return (1);
 }
@@ -50,12 +54,12 @@ void	handler_sigusr(int signum)
 		success = send_bit(0, 0);
 	else if (signum == SIGUSR2)
 	{
-		ft_printf("Server ended unexpectedly.\n");
+		ft_printf("Signal received:\nServer ended unexpectedly.\n");
 		exit (EXIT_FAILURE);
 	}
 	if (success)
 	{
-		ft_printf("Operation successful.\n");
+		ft_printf("Signal received:\nServer received message successfuly.\n");
 		exit (EXIT_SUCCESS);
 	}
 }
