@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:50:03 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/09 17:07:31 by gabe             ###   ########.fr       */
+/*   Updated: 2024/02/01 09:06:13 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-#include <stdio.h>
-#include <signal.h>
-#include "../libft/libft.h"
+# include <stdio.h>
+# include <signal.h>
+# include "../libft/libft.h"
 
 # define ANSI_COLOR_RED		"\x1b[31m"
 # define ANSI_COLOR_BLUE	"\x1b[34m"

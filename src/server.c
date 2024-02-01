@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:14:19 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/11 09:23:59 by gabe             ###   ########.fr       */
+/*   Updated: 2024/02/01 09:07:07 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ bits = 2
 
 
 */
+
 void	handler_sigusr(int signum, siginfo_t *info, void *context)
 {
 	static char	c = 0xFF;

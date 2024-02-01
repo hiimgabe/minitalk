@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabe <gabe@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: gamoreir <gamoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 16:56:53 by gabe              #+#    #+#             */
-/*   Updated: 2024/01/11 09:14:40 by gabe             ###   ########.fr       */
+/*   Updated: 2024/02/01 09:04:01 by gamoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 char	*ft_strappend(char *message, char c)
 {
 	char	*new;
-	int		i = 0;
+	int		i;
 
+	i = 0;
 	if (!message)
 	{
 		new = malloc(2);
@@ -52,7 +53,7 @@ int	send_null(int pid, char *str)
 
 	if (i++ != 8)
 	{
-		if(kill(pid, SIGUSR1) == -1)
+		if (kill(pid, SIGUSR1) == -1)
 			ft_error(pid, str);
 		return (0);
 	}
